@@ -1,9 +1,11 @@
 import isArray from 'lodash/lang/isArray';
+import intersection from 'lodash/array/intersection';
 
 export default function matchesType(targetType, draggedItemType) {
+  var draggedItemTypeArr = draggedItemType.split('#');
   if (isArray(targetType)) {
-    return targetType.some(t => t === draggedItemType);
+    return intersection(targetType, draggedItemTypeArr);
   } else {
-    return targetType === draggedItemType;
+    return draggedItemTypeArr.some(t => t === targetType);
   }
 }
