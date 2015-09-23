@@ -4,7 +4,11 @@ import intersection from 'lodash/array/intersection';
 export default function matchesType(targetType, draggedItemType) {
   var draggedItemTypeArr = draggedItemType.split('#');
   if (isArray(targetType)) {
-    return intersection(targetType, draggedItemTypeArr);
+  	if (intersection(targetType, draggedItemTypeArr)) {
+  		return true;
+  	} else {
+  		return false;
+  	}
   } else {
     return draggedItemTypeArr.some(t => t === targetType);
   }
