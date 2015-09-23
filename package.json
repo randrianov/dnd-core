@@ -5,11 +5,11 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
-    "build": "npm install && babel src --out-dir lib",
+    "build": "npm run clean && babel src --out-dir lib",
     "test": "mocha --compilers js:babel/register --recursive",
     "test:cov": "istanbul cover ./node_modules/.bin/_mocha -- --compilers js:babel/register --recursive",
     "test:watch": "npm run test -- --watch",
-    "postinstall": "npm run build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
