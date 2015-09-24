@@ -1,5 +1,5 @@
 {
-  "name": "dnd-core",
+  "name": "dnd-core-fork",
   "version": "1.2.1",
   "description": "Drag and drop sans the GUI",
   "main": "lib/index.js",
